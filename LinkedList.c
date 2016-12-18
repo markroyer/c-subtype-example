@@ -36,6 +36,9 @@ typedef struct LinkedList_private_fields {
 } LinkedList_private_fields;
 
 // @formatter:off
+/**
+ * LinkedList public methods
+ */
 const LinkedList_vtable LinkedList_methods = {
 	.toString = LinkedList_toString,
 	.add = LinkedList_add,
@@ -47,12 +50,17 @@ const LinkedList_vtable LinkedList_methods = {
 
 static char str[256];
 
+/**
+ * Creates a new list.
+ *
+ * @return The new list
+ */
 LinkedList* newLinkedList() {
 	LinkedList* result = malloc(sizeof(LinkedList));
 	result->parent = newObject();
 	result->parent->derived_object = result;
 
-	result->parent->methods = (const Object_vtable*)(&LinkedList_methods);
+	result->parent->methods = (const Object_vtable*) (&LinkedList_methods);
 
 	result->derived_object = NULL;
 
@@ -61,9 +69,15 @@ LinkedList* newLinkedList() {
 	result->private_fields = malloc(sizeof(LinkedList_private_fields));
 
 	result->private_fields->first = NULL;
+
 	return result;
 }
 
+/**
+ * Deletes the given list.
+ *
+ * @param list The list to delete
+ */
 void deleteLinkedList(LinkedList* list) {
 
 	Node* first = list->private_fields->first;
@@ -79,12 +93,6 @@ void deleteLinkedList(LinkedList* list) {
 	free(list);
 }
 
-/**
- * Place the given item at the end of the list.
- *
- * @param list (Not null)
- * @param item (Not null)
- */
 static void LinkedList_add(LinkedList* list, Object* item) {
 
 	Node* n = newNode(item, NULL);
@@ -127,6 +135,7 @@ static void LinkedList_display(LinkedList* list) {
 }
 
 static const char* LinkedList_toString(Object* obj) {
+//  An example of calling the Object supertype toString method
 //	extern Object_vtable Object_methods;
 //	sprintf(str, "%s%s", "Listed: ", Object_methods.toString(obj));
 
@@ -134,10 +143,10 @@ static const char* LinkedList_toString(Object* obj) {
 	Node* n = this->private_fields->first;
 	strcpy(str, "[ ");
 	while (n != NULL) {
-			strcat(str, n->item->methods->toString(n->item));
-			n = n->next;
-			if (n != NULL)
-				strcat(str, ", ");
+		strcat(str, n->item->methods->toString(n->item));
+		n = n->next;
+		if (n != NULL)
+			strcat(str, ", ");
 	}
 	strcat(str, " ]");
 
