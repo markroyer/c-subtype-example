@@ -16,6 +16,11 @@ typedef struct Object_private_fields {
 
 } Object_private_fields;
 
+/**
+ * Creates a new object.
+ *
+ * @return The newly created object
+ */
 Object* newObject() {
 	Object* result = malloc(sizeof(Object));
 	result->derived_object = NULL;
@@ -25,6 +30,11 @@ Object* newObject() {
 	return result;
 }
 
+/**
+ * Delete the object.
+ *
+ * @param obj The object to delete
+ */
 void deleteObject(Object* obj) {
 	free(obj->private_fields);
 	free(obj);
