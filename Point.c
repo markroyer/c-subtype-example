@@ -1,3 +1,8 @@
+/**
+ * @file Point.c
+ * @author Mark Royer
+ * @date 18 December 2016
+ */
 
 #include <stdlib.h>
 #include <stdio.h>

@@ -1,3 +1,8 @@
+/**
+ * @file Point.h
+ * @author Mark Royer
+ * @date 18 December 2016
+ */
 
 #ifndef POINT_H_
 #define POINT_H_

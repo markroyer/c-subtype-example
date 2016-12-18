@@ -1,3 +1,9 @@
+/**
+ * @file LinkedList.h
+ * @author Mark Royer
+ * @date 18 December 2016
+ */
+
 #ifndef LINKEDLIST_H_
 #define LINKEDLIST_H_
 

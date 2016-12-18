@@ -1,3 +1,8 @@
+/**
+ * @file Object.h
+ * @author Mark Royer
+ * @date 18 December 2016
+ */
 
 #ifndef OBJECT_H_
 #define OBJECT_H_

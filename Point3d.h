@@ -1,3 +1,8 @@
+/**
+ * @file Point3d.h
+ * @author Mark Royer
+ * @date 18 December 2016
+ */
 
 #ifndef POINT3D_H_
 #define POINT3D_H_
