@@ -38,7 +38,7 @@ all:	$(TARGET)
 clean:
 	rm -rf *~ $(OBJS) $(OBJS:%.o=%.d) $(TARGET) $(DOCDIR) $(FNAME).tgz
 
-docs: $(TARGET) README.dox
+docs: $(TARGET) README.md
 	doxygen Doxyfile
 
 submit: clean

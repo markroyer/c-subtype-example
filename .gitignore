@@ -32,3 +32,4 @@
 *.dSYM/
 *.su
 /c-subtype-example
+/docs
