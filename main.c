@@ -5,7 +5,13 @@
 #include "LinkedList.h"
 #include "Point3d.h"
 
-
+/**
+ * Display a linked list with some objects in it.
+ *
+ * @param argc
+ * @param argv
+ * @return
+ */
 int main(int argc, char* argv[]) {
 
 	LinkedList* list = newLinkedList();
@@ -33,6 +39,8 @@ int main(int argc, char* argv[]) {
 	
 	Object* upCast = list->parent;
 	
+	list->methods->removeFirst(list);
+
 	printf("%s - Object pointer\n", upCast->methods->toString(upCast));
 
 	deleteLinkedList(list);
