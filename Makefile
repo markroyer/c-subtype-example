@@ -17,7 +17,7 @@ CFLAGS = -std=c99 -O2 -g -Wall #-fmessage-length=0 -MMD -MP
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:%.c=%.o)
 
-TARGET = helloWorld
+TARGET = c-subtype-example
 
 # Make sure to modify these three variables for the project submission!
 LASTNAME = royer
